@@ -57,3 +57,17 @@ configurations {
         extendsFrom testRuntime
     }
 }
+    
+task testWeb(){
+   dependsOn assemble, compileTestJava
+   
+   doLast{
+          println 'Starting Web test'         
+          javaexec {
+                   main = "cucumber.api.cli.Main"
+                   classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+                   args = ['--plugin', 'pretty', '--plugin', 'html:reports/html-report/ios', '--glue', 'stepdefinitions', 'src/test/resources', '--tags', '@navpg' , '--tags', '@ios']
+          }     
+   }
+}
+
