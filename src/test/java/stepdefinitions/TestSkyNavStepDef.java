@@ -17,14 +17,12 @@ public class TestSkyNavStepDef {
 	
 	@Before(value = "@navpg")
 	public void setUp(){		
-		//driver = new ChromeDriver();
-		driver = new RemoteWebDriver(DesiredCapabilities.chrome());
+	    driver = new RemoteWebDriver("http://localhost:9515", DesiredCapabilities.chrome());
 		testNav = new skynewsNavigate(driver);
 	}
 	
 	@Given("^I am on the Sky news site$")
 	public void I_am_on_the_Sky_news_site(){
-	//	driver.manage().timeouts().wait(timeout);
 		driver.get("https://www.google.co.uk");
 	}
 	
