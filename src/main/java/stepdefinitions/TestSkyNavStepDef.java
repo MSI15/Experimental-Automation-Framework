@@ -2,10 +2,10 @@ package stepdefinitions;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.safari.SafariDriver;
-
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import testfiles.skynewsNavigate;
+
 
 public class TestSkyNavStepDef {
 	
