@@ -16,6 +16,13 @@ apply plugin: 'idea'
 apply plugin: "com.jfrog.artifactory"
 apply plugin: 'maven-publish'
 
+
+// Change the version number here - this will update both the aak and artifactory version numbers
+// in one place...
+def packageName = 'com.bskyb.digitalcontentsdk'
+def libraryVersion = '1.0.0' + "$System.env.BUILD_NUMBER" ?: 0
+def projectName = 'appium'
+
 // In this section you declare where to find the dependencies of your project
 repositories {
     // Use 'jcenter' for resolving your dependencies.

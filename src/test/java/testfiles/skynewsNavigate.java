@@ -1,7 +1,7 @@
 package testfiles;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 
 public class skynewsNavigate {
@@ -10,7 +10,7 @@ public class skynewsNavigate {
 	        public WebDriver driver;
 	
     public 	skynewsNavigate(WebDriver driver2){
-    	    driver = new SafariDriver();
+    	    driver = new ChromeDriver();
     	    this.driver = driver2;
 	        pgobj = new PageObjects();	
 	        PageFactory.initElements(driver, pgobj);
