@@ -10,15 +10,14 @@ public class skynewsNavigate {
 	        public WebDriver driver;
 	
     public 	skynewsNavigate(WebDriver driver2){
-    	    driver = new ChromeDriver();
+    	    ///driver = new ChromeDriver();
     	    this.driver = driver2;
 	        pgobj = new PageObjects();	
 	        PageFactory.initElements(driver, pgobj);
     }
 
-    
 	public void clickTab(){		
-		    pgobj.UKTab.click();		
+		    pgobj.worldTab.click();;		
 	}
 
 }

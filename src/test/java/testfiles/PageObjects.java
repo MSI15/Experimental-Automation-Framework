@@ -5,10 +5,13 @@ import org.openqa.selenium.support.FindBy;
 
 public class PageObjects {
 	
-	@FindBy(name="Home")
+	@FindBy(linkText="Home")
 	public WebElement homeTab;
 	
-	@FindBy(name="UK")
+	@FindBy(linkText="UK")
 	public WebElement UKTab;
+	
+	@FindBy(linkText="World")
+	public WebElement worldTab;
 
 }

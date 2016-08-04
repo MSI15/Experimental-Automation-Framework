@@ -7,3 +7,4 @@ Feature: Verify user is able to navigate on the Sky News Website
   @navpg @ios
   Scenario: Verify user is able to navigate on the site
     Given I am on the Sky news site
+    When I click on a tab
