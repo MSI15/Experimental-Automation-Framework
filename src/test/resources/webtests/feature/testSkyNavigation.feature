@@ -6,5 +6,6 @@ Feature: Verify user is able to navigate on the Sky News Website
 
   @navpg @ios
   Scenario: Verify user is able to navigate on the site
-    Given I am on the Sky news site
-    When I click on a tab
+    Given I navigate to the sky news site
+    When the home page is loaded and displayed
+    Then I can navigate to other pages using the tabs

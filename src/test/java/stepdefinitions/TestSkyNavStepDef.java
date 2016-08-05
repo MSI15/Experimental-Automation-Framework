@@ -1,14 +1,12 @@
 package stepdefinitions;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
+import org.springframework.util.Assert;
 
 import coreSystemFiles.CreateDriver;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import testfiles.skynewsNavigate;
 
@@ -26,15 +24,19 @@ public class TestSkyNavStepDef {
 		testNav = new skynewsNavigate(DRIVER);	
 	}
 	
-	@Given("^I am on the Sky news site$")
+	@Given("^I navigate to the sky news site$")
 	public void I_am_on_the_Sky_news_site(){
 		testNav.driver.get("http://news.sky.com");
 	}
 	
-    @When("^I click on a tab$")
+	@When("^the home page is loaded and displayed$")
+	public void the_home_page_is_loaded_and_displayed(){
+		Assert.isTrue(testNav.isHomePageDisplayed(), "home page is displayed");
+	}
+	
+	@Then("^I can navigate to other pages using the tabs$")
     public void I_click_on_a_tab(){
-       // DRIVER.findElement(By.xpath("html/body/div[2]/header/div/div/div/div/ul/li[2]/a")).click();
-    	testNav.clickTab();
+       Assert.isTrue(testNav.clickNCheck(), "Correct page is displayed upon clicking");
 	}
 
 }
