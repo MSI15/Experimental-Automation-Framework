@@ -2,14 +2,21 @@ package testfiles;
 
 import java.util.Iterator;
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
-
 import coreSystemFiles.Methods;
+
+/**
+ * 
+ * @author Mohammad.N.H.Siddiqui
+ * WebAutomation Framework
+ * Created 05/08/2016
+ * skynewsNavigate class
+ * to reference in tests 
+ *
+ */
 
 public class skynewsNavigate extends Methods{
 	
@@ -43,20 +50,16 @@ public class skynewsNavigate extends Methods{
   	        recordTabs[i] = weL.getText();	    	
                i = i + 1;
          }
-         for (n=1;n<size;n++){    	
-  	       try {	  
+         for (n=1;n<size;n++){  
+        	    System.out.println(recordTabs[n]);
   		        findAnElement(By.linkText(recordTabs[n])).click();
-  		        Thread.sleep(1000);	    		
+  		        waitFor(1000);        
+  		        waitForUrl("http://news.sky.com/"+recordTabs[n].toLowerCase().replace(" ", ""));
   		        if (recordTabs[n].equalsIgnoreCase(findAnElement(By.className("section-header__headline")).getText())){
   			       System.out.println(recordTabs[n] + " page is displayed");
   		        }else{
   		           return false;
   		        }
-		    
-		       } catch (InterruptedException e) {
-			        // TODO Auto-generated catch block
-			        e.printStackTrace();
-		       }
          }
 		return true;
     	

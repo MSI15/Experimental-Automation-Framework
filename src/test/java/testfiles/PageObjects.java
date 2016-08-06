@@ -1,9 +1,18 @@
 package testfiles;
 
 import java.util.List;
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+/**
+ * 
+ * @author Mohammad.N.H.Siddiqui
+ * WebAutomation Framework
+ * Created 05/08/2016
+ * PageObjects class
+ * for holding pageObjects 
+ *
+ */
 
 public class PageObjects {
 	

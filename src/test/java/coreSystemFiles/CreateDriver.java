@@ -4,6 +4,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
+/**
+ * 
+ * @author Mohammad.N.H.Siddiqui
+ * WebAutomation Framework
+ * Created 05/08/2016
+ * CreateDriver class for 
+ * generating various drivers
+ *
+ */
+
 public class CreateDriver {
 	
 	WebDriver driver;
